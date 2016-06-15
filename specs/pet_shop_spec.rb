@@ -41,5 +41,12 @@ class TestPetShop < Minitest::Test
     assert_equal(0,@pet_shop.total)
   end
 
+  def test_pet_shop_receieves_cash
+    @pet_shop.receives_cash(@pet_shop.get_pet.price)
+    assert_equal(40,@pet_shop.total)
+  end
+
+
+
 
 end

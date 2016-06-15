@@ -24,4 +24,8 @@ class PetShop
       return affordable_pets[0]
   end
 
+  def receives_cash(cash)
+    return @total = @total + cash
+  end
+
 end
