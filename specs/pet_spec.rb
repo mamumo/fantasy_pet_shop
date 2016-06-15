@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require_relative'../pet.rb'
+require ('minitest/autorun')
+require_relative('../pet.rb')
 
 class TestPets < Minitest::Test
   def setup
@@ -7,7 +7,7 @@ class TestPets < Minitest::Test
   end
 
   def test_does_pet_have_type
-    assert_equal("Fire", @pet.type)
+    assert_equal("Fire", @pet.type())
   end
 
 end

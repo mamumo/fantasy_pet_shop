@@ -19,5 +19,15 @@ class TestPetShop < Minitest::Test
   def test_initial_state
     assert_equal(4, @pet_shop.number_of_pets())
   end
-  
+
+  def test_can_get_pet
+    purchased_pet = @pet_shop.get_pet()
+    assert_equal("Grass", purchased_pet.type())
+  end
+
+  def test_pet_leaves_pet_shop
+    @pet_shop.get_pet()
+    assert_equal(3,@pet_shop.number_of_pets())
+  end
+
 end
