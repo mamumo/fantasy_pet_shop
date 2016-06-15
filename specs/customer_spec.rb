@@ -36,4 +36,9 @@ class TestCustomer <Minitest:: Test
     assert_equal(1,@customer.pet_purchases())
   end
 
+  def test_pays_for_pet
+    @customer.pays_for_pet(@pet_shop.get_pet.price)
+    assert_equal(10, @customer.cash)
+  end
+
 end

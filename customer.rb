@@ -17,4 +17,8 @@ class Customer
     @pet_purchases << pet # we need to change this 
   end
 
+  def pays_for_pet(price)
+     return @cash = @cash - price
+  end
+
 end

@@ -1,8 +1,10 @@
 class PetShop
 
+  attr_reader :total
+
   def initialize( pets )
     @pets = pets
-    # @pets_sold = []
+    @total = 0
   end
 
   def number_of_pets
@@ -13,10 +15,13 @@ class PetShop
     @pets.pop
   end
 
-  def number_of_pets_sold
-    number = @pet_shop.number_of_pets
-    sold = @customer.pet_purchases
-    return number - sold
+  def get_pet_by_price(cash)
+    affordable_pets = []
+
+    for pet in @pets
+      affordable_pets << pet.breed if pet.price <= cash
+    end
+      return affordable_pets[0]
   end
 
 end
