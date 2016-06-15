@@ -9,8 +9,12 @@ class Customer
   end
 
   def pet_purchases
-    @pet_purchases.count()
+    @pet_purchases.length()
   end
 
+  def take_pet (pet_shop)
+    pet = pet_shop.get_pet()
+    @pet_purchases << pet # we need to change this 
+  end
 
 end

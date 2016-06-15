@@ -1,10 +1,22 @@
 require 'minitest/autorun'
 require_relative'../customer.rb'
+require_relative'../pet_shop.rb'
+require_relative'../pet.rb'
 
 class TestCustomer <Minitest:: Test
 
   def setup
     @customer = Customer.new("Marie", 50)
+
+    pet_1 = Pet.new("Fire", "Charamander",25)
+    pet_2 = Pet.new("Water", "Squirtle",30)
+    pet_3 = Pet.new("Fire", "Charizard",25)
+    pet_4 = Pet.new("Grass", "Bulbasaur",40)
+
+    pets = [ pet_1,pet_2,pet_3,pet_4 ]
+
+    @pet_shop = PetShop.new( pets )
+
   end
 
   def test_customer_name
@@ -16,12 +28,12 @@ class TestCustomer <Minitest:: Test
   end
 
   def test_customer_has_not_bought_pets
-    assert_equal(0,@customer.pet_purchases)
+    assert_equal(0,@customer.pet_purchases())
   end
 
-  # def test_customer_can_buy_pet
-  #   @customer.can_customer_buy_pet (@pet_shop)
-  #   assert_equal(1,@customer.pet_purchases)
-  # end
+  def test_customer_can_buy_pet
+    @customer.take_pet( @pet_shop )
+    assert_equal(1,@customer.pet_purchases())
+  end
 
 end
