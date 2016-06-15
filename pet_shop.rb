@@ -21,11 +21,13 @@ class PetShop
     for pet in @pets
       affordable_pets << pet.breed if pet.price <= cash
     end
-      return affordable_pets[0]
+    return affordable_pets
   end
 
   def receives_cash(cash)
     return @total = @total + cash
   end
 
+
 end
+

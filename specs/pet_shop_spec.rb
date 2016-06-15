@@ -34,7 +34,7 @@ class TestPetShop < Minitest::Test
   end
 
   def test_get_pet_by_price
-    assert_equal("Charizard",@pet_shop.get_pet_by_price(@customer.cash))
+    assert_equal(["Charizard"],@pet_shop.get_pet_by_price(@customer.cash))
   end
 
   def test_pet_shop_total_cash
